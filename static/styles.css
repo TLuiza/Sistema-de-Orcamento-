@@ -1,0 +1,110 @@
+/* static/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do Cabeçalho */
+.header {
+    background-color: #3f51b5; /* Azul que combina com 'instalações' */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 4px 4px 0 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* Estilo para Formulário e Orçamento */
+.section {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.section h2 {
+    color: #3f51b5;
+    border-left: 5px solid #ff9800; /* Laranja de destaque */
+    padding-left: 10px;
+}
+
+/* Campos do Formulário */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Botão */
+button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+/* Detalhes do Produto no Orçamento */
+.produto-detalhe {
+    display: flex; 
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Garante que quebre a linha em telas menores */
+}
+
+.produto-info {
+    flex: 2; 
+}
+
+.produto-foto {
+    flex: 1; 
+    max-width: 300px; 
+}
+
+.produto-foto img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo de Destaque para o Valor Total */
+.valor-total {
+    text-align: right;
+    font-size: 2em;
+    color: #3f51b5;
+    font-weight: bold;
+    padding-top: 15px;
+    border-top: 2px solid #3f51b5;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Orçamento de Instalações</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>[NOME DA SUA EMPRESA]</h1>
+            <p>Orçamento de Instalações Comerciais | Data: {{ 'hoje' | today }}</p>
+            <p>Contato: (XX) XXXX-XXXX | E-mail: contato@empresa.com.br</p>
+        </div>
+
+        <div class="section">
+            <h2>Detalhes da Proposta</h2>
+            
+            <div class="produto-detalhe">
+                <div class="produto-info">
+                    <h3>{{ nome }}</h3>
+                    <p>{{ descricao }}</p>
+                </div>
+                
+                {% if caminho_foto %}
+                    <div class="produto-foto">
+                        <img src="{{ url_for('static', filename=caminho_foto) }}" alt="Foto do Produto/Instalação">
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Cálculo do Investimento</h2>
+            <p><strong>Metragem Estimada (m²):</strong> {{ metragem | round(2) }} m²</p>
+            <p><strong>Valor por Metro Quadrado:</strong> R$ {{ valor_m2 | round(2) }}</p>
+            <p>--------------------------------------------------</p>
+        </div>
+
+        <div class="valor-total">
+            {% if valor_total is string %}
+                <p>ERRO: {{ valor_total }}</p>
+            {% else %}
+                <p>VALOR TOTAL: R$ {{ "{:,.2f}".format(valor_total).replace(',', 'TEMP').replace('.', ',').replace('TEMP', '.') }}</p>
+            {% endif %}
+        </div>
+        
+        <p style="margin-top: 30px; text-align: center;">Este é um orçamento preliminar, sujeito a alterações após medição final.</p>
+    </div>
+</body>
+</html>
