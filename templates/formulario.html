@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Gerador de Orçamento - Instalações</title>
+    <title>Gerador de Orçamento - Milímetros</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Gerador de Orçamento Simples</h1>
+            <h1>Gerador de Orçamento Simples (Entrada em Milímetros)</h1>
         </div>
 
         <form method="POST" enctype="multipart/form-data">
@@ -26,12 +26,19 @@
             </div>
 
             <div class="section">
-                <h2>Cálculo de Custo</h2>
-                <label for="metragem">Metragem (m²):</label>
-                <input type="number" id="metragem" name="metragem" step="0.01" required>
+                <h2>Cálculo de Custo e Dimensões da Peça (Entrada em Milímetros)</h2>
+                
+                <label for="largura">Largura (mm):</label>
+                <input type="number" id="largura" name="largura" required>
 
-                <label for="valor_m2">Valor do Metro Quadrado (R$/m²):</label>
-                <input type="number" id="valor_m2" name="valor_m2" step="0.01" required>
+                <label for="altura">Altura (mm):</label>
+                <input type="number" id="altura" name="altura" required>
+                
+                <label for="comprimento">Comprimento (mm):</label>
+                <input type="number" id="comprimento" name="comprimento" required>
+                
+                <label for="valor_mm">Valor por Milímetro (R$/mm):</label>
+                <input type="number" id="valor_mm" name="valor_mm" step="0.000001" required> 
             </div>
             
             <button type="submit">Gerar Orçamento</button>

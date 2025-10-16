@@ -31,10 +31,23 @@
         </div>
 
         <div class="section">
-            <h2>Cálculo do Investimento</h2>
-            <p><strong>Metragem Estimada (m²):</strong> {{ metragem | round(2) }} m²</p>
-            <p><strong>Valor por Metro Quadrado:</strong> R$ {{ valor_m2 | round(2) }}</p>
+            <h2>Cálculo do Investimento (Peça Única)</h2>
+            
+            <p><strong>Largura:</strong> {{ largura }} mm</p>
+            <p><strong>Altura:</strong> {{ altura }} mm</p>
+            <p><strong>Comprimento:</strong> {{ comprimento }} mm</p>
+
+            <p><strong>Total de Milímetros Cúbicos (mm³):</strong> 
+                {% if dimensoes_mm_cubicos is number %}
+                    {{ dimensoes_mm_cubicos | round(3) }} mm³
+                {% else %}
+                    N/A
+                {% endif %}
+            </p>
+            
+            <p><strong>Valor por Milímetro (R$/mm):</strong> R$ {{ valor_mm | round(6) }}</p>
             <p>--------------------------------------------------</p>
+            <p>Fórmula de Cálculo: Dimensões (mm³) x Valor/mm</p>
         </div>
 
         <div class="valor-total">
